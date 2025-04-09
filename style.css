@@ -136,7 +136,7 @@ html, body {
 
 .project-images img {
   width: 200px; /* Размер изображений */
-  height: auto;
+  height: flex;
   border-radius: 8px; /* Округление углов для изображений */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для изображений */
 }
