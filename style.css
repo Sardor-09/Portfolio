@@ -170,3 +170,12 @@ html, body {
   color: #1abc9c; /* Зеленый цвет при наведении */
   text-decoration: underline; /* Добавляем подчеркивание при наведении */
 }
+.auth-link {
+  color: #e67e22;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
