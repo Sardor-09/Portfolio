@@ -6,6 +6,39 @@
   <title>Проекты | Сардор</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid white;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .project-images img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <div class="wrapper">
@@ -27,7 +60,7 @@
           <li>
             <strong>📦 Приложение на C#:</strong>
             <a href="https://github.com/Sardor-09/Archron" target="_blank">Посмотреть на GitHub</a>
-			<div class="project-images">
+            <div class="project-images">
               <img src="images/4.png" alt="Пример работы Android-приложения 1">
               <img src="images/5.png" alt="Пример работы Android-приложения 2">
             </div>
@@ -40,18 +73,41 @@
               <img src="images/2.png" alt="Пример работы Android-приложения 2">
             </div>
           </li>
-	  <li>
+          <li>
             <strong>Создание авторизации на сайте:</strong>
-
-
-			<div class="project-images">
-              <img src="images/8.png" alt="Пример работы Android-приложения 1">
-              <img src="images/9.png" alt="Пример работы Android-приложения 2">
+            <div class="project-images">
+              <img src="images/8.png" alt="Пример работы авторизации 1">
+              <img src="images/9.png" alt="Пример работы авторизации 2">
             </div>
             <p style="margin-top: 30px;">
-  Подробнее об авторизации вы можете <a href="auth-description.html" class="auth-link">почитать здесь</a>.
-</p>
+              Подробнее об авторизации вы можете <a href="auth-description.html" class="auth-link">почитать здесь</a>.
+            </p>
+          </li>
+          <li>
+            <strong>📦 Приложение на C# "Учет студентов":</strong>
+            <a href="https://github.com/Sardor-09/Uchet" target="_blank">Посмотреть на GitHub</a>
+            <div class="project-images">
+              <img src="images/10.png" alt="Пример работы приложения 'Учет студентов'">
             </div>
+          </li>
+          <li>
+            <strong>📦 Приложение на C# "Автосервис":</strong>
+            <a href="https://github.com/Sardor-09/Archron" target="_blank">Посмотреть на GitHub</a>
+            <div class="project-images">
+              <img src="images/11.png" alt="Пример работы приложения 'Автосервис' 1">
+              <img src="images/12.png" alt="Пример работы приложения 'Автосервис' 2">
+              <img src="images/13.png" alt="Пример работы приложения 'Автосервис' 3">
+            </div>
+          </li>
+          <li>
+            <strong>📦 Приложение на C# "Учет техники":</strong>
+            <a href="https://github.com/Sardor-09/SmartTech" target="_blank">Посмотреть на GitHub</a>
+            <div class="project-images">
+              <img src="images/14.png" alt="Пример работы приложения 'Учет техники' 1">
+              <img src="images/15.png" alt="Пример работы приложения 'Учет техники' 2">
+              <img src="images/16.png" alt="Пример работы приложения 'Учет техники' 3">
+            </div>
+          </li>
         </ul>
       </section>
     </main>
@@ -62,5 +118,22 @@
       </div>
     </footer>
   </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Увеличенное изображение">
+  </div>
+
+  <!-- Script -->
+  <script>
+    document.querySelectorAll('.project-images img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+  </script>
 </body>
 </html>
